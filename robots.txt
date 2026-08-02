@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.leonidareport.com/sitemap.xml
+Sitemap: https://leonidareport.toptierrankers.workers.dev/sitemap.xml
