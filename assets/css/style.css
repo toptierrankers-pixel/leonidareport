@@ -137,6 +137,32 @@ main.article{padding:44px 0 80px;}
 @media (max-width: 560px){
   .inline-img{width:100%; margin-right:0;}
 }
+.content-img{
+  width:100%; border-radius:var(--radius); border:1px solid var(--line);
+  margin:28px 0; object-fit:cover; max-height:420px;
+}
+.tag-row{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 6px;}
+.tag-pill{
+  display:inline-block; padding:5px 12px; border-radius:999px;
+  border:1px solid var(--line); background:var(--bg-card);
+  color:var(--teal); font-size:12.5px; text-transform:uppercase; letter-spacing:0.04em; font-weight:600;
+}
+.tag-pill:hover{border-color:var(--pink); color:var(--pink);}
+.related-box{
+  background:var(--bg-card); border:1px solid var(--line); border-left:3px solid var(--pink);
+  border-radius:var(--radius); padding:18px 22px; margin:40px 0 10px;
+}
+.related-box h4{margin:0 0 10px; font-size:13px; letter-spacing:0.08em; color:var(--text-dim);}
+.related-box ul{margin:0; padding-left:18px;}
+.related-box li{margin-bottom:6px; font-size:15.5px;}
+.related-box a{color:var(--text);}
+.related-box a:hover{color:var(--teal);}
+.btn-mail{
+  display:inline-block; margin-top:10px; padding:12px 22px;
+  background:var(--pink); color:#0B0B14; font-weight:700;
+  border-radius:var(--radius); text-transform:uppercase; letter-spacing:0.04em; font-size:14px;
+}
+.btn-mail:hover{background:var(--teal); color:#0B0B14;}
 
 .article .content{max-width:760px; font-size:17.5px;}
 .article .content h2{font-size:24px; margin-top:44px; color:var(--text);}
