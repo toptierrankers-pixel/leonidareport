@@ -64,6 +64,24 @@ header.site-header{
 }
 .logo{display:flex; align-items:center; gap:10px;}
 .logo svg{height:34px; width:auto;}
+
+.nav-toggle{
+  display:none; position:relative; width:34px; height:34px;
+  background:none; border:0; cursor:pointer; padding:0; margin-left:auto;
+}
+.nav-toggle-icon{
+  position:absolute; top:50%; left:5px; right:5px; height:2px;
+  background:var(--text); transform:translateY(-50%); transition:background .15s;
+}
+.nav-toggle-icon::before, .nav-toggle-icon::after{
+  content:""; position:absolute; left:0; right:0; height:2px; background:var(--text);
+  transition:transform .2s ease, top .2s ease;
+}
+.nav-toggle-icon::before{top:-8px;}
+.nav-toggle-icon::after{top:8px;}
+.nav-toggle.open .nav-toggle-icon{background:transparent;}
+.nav-toggle.open .nav-toggle-icon::before{top:0; transform:rotate(45deg);}
+.nav-toggle.open .nav-toggle-icon::after{top:0; transform:rotate(-45deg);}
 .logo-text{font-family:'Oswald', sans-serif; font-size:22px; letter-spacing:0.03em; text-transform:uppercase;}
 .logo-text span{color:var(--pink);}
 nav.main-nav{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
@@ -243,7 +261,32 @@ footer.site-footer a:hover{color:var(--teal);}
 .footer-bottom .disclaimer{max-width:760px; margin-top:8px; line-height:1.6;}
 
 @media (max-width: 720px){
-  nav.main-nav{display:none;}
+  .nav-toggle{display:block;}
+  .site-header .wrap{flex-wrap:wrap;}
+  nav.main-nav{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    background:var(--bg-raised);
+    border-top:1px solid var(--line);
+    margin-top:14px;
+  }
+  nav.main-nav.open{display:flex;}
+  nav.main-nav a{padding:14px 4px; border-bottom:1px solid var(--line);}
+  .nav-dropdown{width:100%;}
+  .nav-dropdown-trigger{
+    width:100%; padding:14px 4px; border-bottom:1px solid var(--line);
+    justify-content:space-between;
+  }
+  .nav-dropdown-menu{
+    position:static; opacity:1; visibility:visible; transform:none;
+    display:none; box-shadow:none; border:0; border-radius:0;
+    background:transparent; margin-top:0; min-width:0; padding:0;
+  }
+  .nav-dropdown.open .nav-dropdown-menu{display:block;}
+  .nav-dropdown-menu a{padding-left:20px; border-bottom:1px solid var(--line);}
   .hero h1{font-size:32px;}
   .article h1{font-size:27px;}
 }
